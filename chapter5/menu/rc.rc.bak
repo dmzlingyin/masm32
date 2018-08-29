@@ -1,0 +1,55 @@
+#include<resource.h>
+
+#define	ICO_MAIN	0x1000//图标
+#define	IDM_MAIN	0X2000//菜单
+#define	IDA_MAIN	0X2000//加速键
+//盗墓笔记
+#define	IDM_ZQL	0X3000
+#define	IDM_WX		0X3001
+#define	IDM_WPZ	0X3002
+#define	IDM_XYH	0X3003
+
+//沙海
+#define	IDM_LC		0X4000
+#define	IDM_ZRS		0X4001
+#define	IDM_HYJ	0X4002
+#define	IDM_LW		0X4003
+#define	IDM_YH		0X4004
+	
+
+ICO_MAIN	ICON		"dmbj.ico"
+
+//菜单项的定义
+
+IDM_MAIN	MENU	DISCARDABLE
+BEGIN
+	popup	"盗墓笔记(&D)"
+	BEGIN
+		menuitem	"张起灵",IDM_ZQL
+		menuitem	"吴邪",IDM_WX
+		menuitem	"王胖子",IDM_WPZ
+		menuitem	separator
+		menuitem	"解雨臣",IDM_XYH
+
+			
+	END
+
+	popup	"沙海(&S)"
+	BEGIN
+		menuitem	"黎簇",IDM_LC
+		menuitem	"张日山"，IDM_ZRS
+		menuitem	"黑眼镜"，IDM_HYJ
+		menuitem	separator
+		menuitem	"梁湾"，IDM_LW
+		menuitem	"杨好"，IDM_YH
+	END
+
+
+END
+
+IDA_MAIN	accelerators
+BEGIN
+	VK_F1,IDM_ZQL,VIRTKEY
+	"B",IDM_WX,VIRTKEY,CONTROL,ALT
+	"F",IDM_WPZ,VIRTKEY,ALT
+END
